@@ -1,5 +1,5 @@
 {
-  "name": "noddy",
+  "name": "minima",
   "version": "1.0.0",
   "description": "a simple login and registration built with nodejs",
   "main": "server.js",
@@ -13,7 +13,7 @@
     "passport",
     "express"
   ],
-  "author": "Bankole Ahmed",
+  "author": "Codetective",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^4.0.1",
