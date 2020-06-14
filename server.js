@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }))
 
 
 //Configure MongoDB Database
-mongoose.connect(process.env.LOCAL_DB, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.CLOUD_DB, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(response => {
     console.log('MongoDB Database Running Successfully')
   })
