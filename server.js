@@ -28,7 +28,9 @@ app.get('/minima', (req, res) => {
 
 app.use('/minima', userRoutes);
 app.use('/minima/posts', postRoutes);
-
+app.get('*', function(req, res){
+  res.status(404).send({error: 'page does not exist. Winter is Coming!!}');
+});
 app.listen(config.app.port, (req, res) => {
   console.log(`Server Is Live At Port ` + config.app.port)
 })
