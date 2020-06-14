@@ -18,7 +18,7 @@ router.get("/authors", getUsers);
 router.get("/author", getUser);
 
 //Register New User
-router.post("/append", regUsers);
+router.post("/append",config.admin, regUsers);
 
 //Login Route Four Users
 router.post("/login", loginUser);
