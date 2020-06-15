@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const PostSchema = new Schema({
   author: {
-    type: String,
+    type: Object,
     required: true,
   },
   title: {
@@ -24,4 +24,4 @@ const PostSchema = new Schema({
   },
 });
 
-module.exports = User = mongoose.model("postModel", UserSchema);
+module.exports = User = mongoose.model("postModel", PostSchema);

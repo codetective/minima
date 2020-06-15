@@ -3,6 +3,7 @@ const path = require('path')
 const config = require('./config/config')
 const mongoose = require('mongoose')
 const userRoutes = require('./routes/userRoutes');
+const postRoutes = require('./routes/postRoutes');
 const app = express()
 require("dotenv").config();
 
@@ -12,7 +13,7 @@ app.use(express.urlencoded({ extended: true }))
 
 
 //Configure MongoDB Database
-mongoose.connect(process.env.CLOUD_DB, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.LOCAL_DB, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(response => {
     console.log('MongoDB Database Running Successfully')
   })
@@ -21,12 +22,12 @@ mongoose.connect(process.env.CLOUD_DB, { useNewUrlParser: true, useUnifiedTopolo
   });
 
 
-
-app.get('/api/v1', (req, res) => {
+app.get('/minima', (req, res) => {
   res.send('welcome to minima')
 })
 
-app.use('/api/v1/', userRoutes);
+app.use('/minima', userRoutes);
+app.use('/minima/posts', postRoutes);
 
 app.listen(config.app.port, (req, res) => {
   console.log(`Server Is Live At Port ` + config.app.port)

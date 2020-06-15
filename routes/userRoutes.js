@@ -18,11 +18,11 @@ router.get("/authors", getUsers);
 router.get("/author", getUser);
 
 //Register New User
-router.post("/append", config.auth, regUsers);
+router.post("/append",config.admin, regUsers);
 
 //Login Route Four Users
 router.post("/login", loginUser);
 
-router.delete("/terminate", config.auth, deleteUser);
+router.delete("/terminate", config.admin, deleteUser);
 
 module.exports = router;
